@@ -28,7 +28,7 @@ public class BookService {
 	
 	@Transactional
 	public List<Book> getByTitle(String title) {
-		return (List<Book>) bookRepository.findByTitle(title) ;
+		return (List<Book>) bookRepository.findByTitleContaining(title) ;
 	}
 	
 	@Transactional

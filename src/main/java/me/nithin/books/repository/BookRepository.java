@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import me.nithin.books.models.Book;
 
 public interface BookRepository<B> extends CrudRepository<Book, Long> {
-	List<Book> findByTitle(String title) ;
+	List<Book> findByTitleContaining(String title) ;
 	List<Book> findByGenre(String genre) ;
 }

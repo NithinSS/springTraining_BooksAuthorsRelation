@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 import me.nithin.books.models.Author;
 
 public interface AuthorRepository<A> extends CrudRepository<Author, Long>{
-	List<Author> findByName(String name) ;
+	List<Author> findByNameContaining(String name) ;
 }

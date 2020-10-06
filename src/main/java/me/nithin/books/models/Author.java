@@ -26,7 +26,7 @@ public class Author {
 	
 	
 	@JsonIgnore
-	@ManyToMany(cascade= {CascadeType.ALL})
+	@ManyToMany
 	@JoinTable(
 			name="WrittenBy",
 			joinColumns=@JoinColumn(name="author_id", referencedColumnName="id"),

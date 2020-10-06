@@ -34,7 +34,9 @@ public class AuthorService {
 	
 	@Transactional
 	public List<Author> getByName(String name) {
-		return authorRepository.findByName(name) ;
+		List<Author> authors = new ArrayList<Author>() ;
+		authors = authorRepository.findByNameContaining(name) ;
+		return authors;
 	}
 	
 	@Transactional 
@@ -48,5 +50,10 @@ public class AuthorService {
 			}
 		}
 		return books;
+	}
+	
+	@Transactional
+	public void deleteAuthor(Long id) {
+		authorRepository.deleteById(id);
 	}
 }
